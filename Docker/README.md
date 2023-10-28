@@ -19,7 +19,7 @@ When using this container, its recommended to run git commands from the host, no
 
 ## Setup Directory Structure and Load the Bash Utilities
 
-To begin, create a top level directory called `picogk` to contain this repo, and optionally the [PicoGKRuntime](https://github.com/leap71/PicoGKRuntime) repo if you want to compile it from source.  The runtime library is precompiled and available within this repo in `Runtime/linux/`.  If you do prefer to compile the runtime yourself, follow the instuctions in [Compile Runtime in Docker](CompileRuntimeInDocker.md).
+To begin, create a top level directory called `picogk` to contain this repo, and optionally the [PicoGKRuntime](https://github.com/leap71/PicoGKRuntime) repo if you want to compile it from source.  The runtime library is precompiled and available within this repo in `Runtime/linux_x64/`.  If you do prefer to compile the runtime yourself, follow the instuctions in [Compile Runtime in Docker](CompileRuntimeInDocker.md).
 
 Assuming you have already cloned this PicoGK repo, navigate to a directory above it and do:
 ```
@@ -79,7 +79,7 @@ You can develop in Visual Studio Code on the host by simply opening your project
 However, some users may want to develop in VSC and use the C# Dev Kit extensions.  To do this, you can open the code inside the running container.  Setup this capability by opening the `picogk` directory in Visual Studio Code and copying the `PicoGK/.devcontainer` directory to it, or do it in bash:
 
 ```
-cp PicoGK/.devconainer ./
+cp -r PicoGK/.devcontainer ./
 code .
 ```
 

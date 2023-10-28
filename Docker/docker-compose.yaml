@@ -10,7 +10,7 @@ services:
     # use the nvidia runtime for GPU access
     runtime: nvidia
     environment:
-      - PICOGK_LIB=/root/picogk/PicoGK/Runtime/linux/picogk.1.0.so
+      - PICOGK_LIB=/root/picogk/PicoGK/Runtime/linux_x64/picogk.1.0.so
       - DISPLAY=${DISPLAY}
       # enable NVIDIA GPU access inside the container
       - NVIDIA_DRIVER_CAPABILITIES=all

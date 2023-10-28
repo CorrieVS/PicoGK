@@ -1,0 +1,11 @@
+{
+    "name": "picogk",
+    "dockerComposeFile": "../Docker/docker-compose.yaml",
+    "service": "picogk_s",
+    "workspaceFolder": "/root/picogk",
+    "customizations": {
+        "vscode": {
+          "extensions": ["ms-dotnettools.csdevkit"]
+        }
+      }
+}
