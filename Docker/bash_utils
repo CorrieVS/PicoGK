@@ -1,0 +1,38 @@
+pico-start(){
+    #add xhost permissions for docker to use display
+    xhost +si:localuser:root
+    echo "added docker xhost permissions"
+    export UID_GID=$(id -u):$(id -g)
+    export UNAME=$(whoami)
+    echo "gathering host user info... $UNAME $UID_GID"
+    docker compose -f $PICOGK_DIRECTORY/PicoGK/Docker/docker-compose.yaml up -d
+}
+
+pico-stop(){
+    # stop the container and remove it
+    docker compose -f $PICOGK_DIRECTORY/PicoGK/Docker/docker-compose.yaml down
+}
+
+pico-shell() {
+    # open a shell in the container
+    docker exec -ti picogk_c bash -l
+}
+
+pico-build() {
+    # build the container from the docker-compose file
+    docker compose -f $PICOGK_DIRECTORY/PicoGK/Docker/docker-compose.yaml build
+}
+
+pico-dir() {
+    # set the directory of the picogk project on the host
+    # recommended file structure is picogk/PicoGK, where PicoGK is the git repo
+    # and picogk is the directory containing the git repo
+    # usage: pico-dir <path_to_pico_dir>
+    # alternatively, add the export command to your .bashrc for convenience
+    export PICOGK_DIRECTORY=$1
+}
+
+pico-log() {
+    # view the logs of the picogk container
+    docker logs picogk_c
+}

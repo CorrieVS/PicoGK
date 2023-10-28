@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  picogk_s:
+    image: picogk_i
+    container_name: picogk_c
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # use the nvidia runtime for GPU access
+    runtime: nvidia
+    environment:
+      - PICOGK_LIB=/root/picogk/PicoGK/Runtime/linux/picogk.1.0.so
+      - DISPLAY=${DISPLAY}
+      # enable NVIDIA GPU access inside the container
+      - NVIDIA_DRIVER_CAPABILITIES=all
+      - NVIDIA_VISIBLE_DEVICES=all
+      - QT_X11_NO_MITSHM=1
+    security_opt:
+      - apparmor:unconfined
+    volumes:
+      # mount host directories to the container for persistent storage
+      - ../../../picogk:/root/picogk
+      # mount the X11 socket to enable graphics display
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    # set the working directory inside the container
+    working_dir: /root/picogk
+    # give the container access to the host's network
+    network_mode: host
+    # enable stdin and tty to allow the user to run bash interactively
+    stdin_open: true
+    tty: true
+    # run the entrypoint script and pass the UID and GID of the host user
+    entrypoint: /entrypoint.sh -u "$UID_GID" -n "$UNAME"
+    
