@@ -1,4 +1,6 @@
-# Welcome to PicoGK
+# Welcome to PicoGK with Docker for Ubuntu 22.04
+
+This is a **fork of the Leap71/PicoGK repo** which adds support for Linux developers.  The Leap71/PicoGKRuntime library is compiled for Linux and included here.   The fork adds a Docker container based in Ubuntu 22.04 with all the dependencies for building and developing both repos.  See [Docker/README.md](Docker/README.md) to get started
 
 PicoGK ("peacock") is a compact, robust, and fast geometry kernel for Computational Engineering. 
 
