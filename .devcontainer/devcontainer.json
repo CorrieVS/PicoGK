@@ -1,11 +1,12 @@
 {
-    "name": "picogk",
-    "dockerComposeFile": "../Docker/docker-compose.yaml",
-    "service": "picogk_s",
-    "workspaceFolder": "/root/picogk",
-    "customizations": {
-        "vscode": {
-          "extensions": ["ms-dotnettools.csdevkit"]
-        }
+  "name": "picogk",
+  "dockerComposeFile": "../PicoGK/Docker/docker-compose.yaml",
+  "service": "picogk_s",
+  "remoteUser": "${localEnv:USER}",
+  "workspaceFolder": "/home/${localEnv:USER}/picogk",
+  "customizations": {
+      "vscode": {
+        "extensions": ["ms-dotnettools.csdevkit"]
       }
+    }
 }
