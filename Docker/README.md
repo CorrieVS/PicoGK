@@ -14,10 +14,6 @@ The container has these features:
 - [Docker Engine with docker compose](https://docs.docker.com/engine/install/ubuntu/)
 - [nvidia-container-toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html), for NVIDIA graphics computers
 
-## Use with git
-
-When using this container, its recommended to run git commands from the host, not within the container.  Since the PicoGK repos and projects you add can live in a volume shared with the host, in theory you could use git inside the container, yet the preferred method remains to do git repo management from the host. Use the container only to build and run code.
-
 ## Setup Directory Structure and Load the Bash Utilities
 
 To begin, create a top level directory called `picogk` to contain this repo, and optionally the [PicoGKRuntime](https://github.com/leap71/PicoGKRuntime) repo if you want to compile it from source.  The runtime library is precompiled and available within this repo in `Runtime/linux_x64/`.  If you do prefer to compile the runtime yourself, follow the instuctions in [Compile Runtime in Docker](CompileRuntimeInDocker.md).
