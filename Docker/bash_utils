@@ -15,7 +15,7 @@ pico-stop(){
 
 pico-shell() {
     # open a shell in the container
-    docker exec -ti picogk_c bash -l
+    docker exec -u $USER -w ~/picogk -ti picogk_c bash -l
 }
 
 pico-build() {

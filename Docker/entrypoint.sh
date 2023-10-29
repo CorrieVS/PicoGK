@@ -24,8 +24,29 @@ else
   echo "user $uname does not exist, creating..."
   useradd -u $uid -s /bin/bash $uname
 fi
-echo "setting picogk volume owner to $uname $userid"
-chown -R $userid /root/picogk
+
+# Dynamically sets the owner of the picogk volume to the host user
+if [ -d "/home/$uname/picogk" ]; then
+  echo "picogk directory already exists for $uname"
+else
+  chown -R $userid /root
+  chmod 775 /root/picogk
+  mkdir /home/$uname
+  # create a symlink to the volume in the home directory
+  cd /home/$uname && ln -s /root/picogk picogk
+fi
+
+# check if there is not a folder called Documents in the home directory
+# if not, create it.  This is where PicoGK stores log files.
+if [ ! -d "/home/$uname/Documents" ]; then
+  echo "creating Documents folder in /home/$uname"
+  mkdir /home/$uname/Documents
+fi
+
+# set the owner of the home directory to the host user
+chown -R $userid /home/$uname
+echo "$uname ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/$uname && \
+    chmod 0440 /etc/sudoers.d/$uname
 
 # add PicoGKRuntime library to /usr/local/lib
 if [ -f "$PICOGK_LIB" ]; then

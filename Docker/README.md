@@ -7,7 +7,8 @@ bash utilities to simplify command line actions; and a Visual Studio Code devcon
 The container has these features:
 - Ubuntu 22.04 with .NET 7.0
 - Volume for persistent storage: `/root/picogk`
-- Assigns ownership of `/root/picogk` to the host user on start
+- Assigns volume ownership to the host user
+- Symlinks volume to `/home/$USER/picogk` in the container so you can work as yourself
 
 ## Requirements
 - [Docker Engine with docker compose](https://docs.docker.com/engine/install/ubuntu/)

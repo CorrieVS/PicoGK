@@ -25,8 +25,6 @@ RUN apt update && apt upgrade -y && apt install -y \
 
 # switch to home dir
 WORKDIR /root
-# create a directory for PicoGK Logfiles (see PicoGK/PicoGK_Utils.cs)
-RUN mkdir /root/Documents
 
 # install c-blosc from source
 RUN git clone https://github.com/Blosc/c-blosc.git
