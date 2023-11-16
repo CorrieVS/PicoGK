@@ -1,5 +1,6 @@
-# Welcome to PicoGK
+# Welcome to PicoGK for Ubuntu 22.04
 
+This is a **fork of the Leap71/PicoGK repo** which adds support for Linux developers.  The Leap71/PicoGKRuntime library is compiled for Linux and included here.   The library can be used on Linux machines or with the Docker development environment based in Ubuntu 22.04 with all the dependencies for building and developing both repos.  See [PicoGK_Docker](https://github.com/CorrieVS/PicoGK_Docker) to get started.
 PicoGK ("peacock") is a compact, robust, and fast geometry kernel for Computational Engineering. 
 
 PicoGK was developed by Lin Kayser, and is maintained by [LEAP 71](www.leap71.com). PicoGK is released under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) (SPDX Apache-2.0).  
