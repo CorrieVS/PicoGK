@@ -20,8 +20,11 @@ PicoGK uses C#, a modern and elegant language, that can be learned quickly, but 
 
 - If you are on Mac, [you can download it here.](https://visualstudio.microsoft.com/vs/mac/)
 - If you are on Windows, [you can download it here.](https://visualstudio.microsoft.com/vs/community/)
+- If you are on Ubuntu, [you can download it here.](https://snapcraft.io/code)
 
-When installing, make sure you enable C# support and desktop app development. You don't need anything else.
+When installing on Mac and Windows, make sure you enable C# support and desktop app development. You don't need anything else.
+
+### Install on Mac and Windows
 
 Open Visual Studio, and create a new "Console" application. 
 
@@ -51,6 +54,38 @@ Now, let's install the PicoGK library.
 - Go into the PicoGK folder, and navigate to the subfolder Runtime
 - If you are on Mac, copy the **.dylib** files you see there to /usr/local/lib
 - If you are on Windows, copy the **.dll** files to C:\SYSTEM32
+
+Now you are all set and can write your first PicoGK application. 
+
+Return to the [Getting Started](README.md#your-first-picogk-app) page to see how to run your first PicoGK app.
+
+### Install on Ubuntu 22.04
+
+Head over to the [PicoGKRuntime](https://github.com/CorrieVS/PicoGKRuntime) repo, clone it and install the dependencies (requires sudo)
+```
+git clone --recursive https://github.com/CorrieVS/PicoGKRuntime.git
+sudo ./PicoGKRuntime/Install_Dependencies/linux_x64.sh
+```
+
+Open Visual Studio and open a terminal.  Create a new C# application via the terminal with
+```
+dotnet new console -n HelloWorld
+cd HelloWorld
+dotnet build
+dotnet run
+```
+You should see "Hello World!" output from the run command.
+
+Clone PicoGK into the app `HelloWorld` directory.  Then, setup the PicoGKRuntime library
+```
+git clone -b linux https://github.com/CorrieVS/PicoGK.git
+sudo cp PicoGK/Runtime/linux_x64/*.so /usr/local/lib
+```
+You will need to add the full path to the library to `PicoGK/PicoGK_Config.cs` to use it.
+```
+public const string strPicoGKLib = "/usr/local/lib/picogk.1.0.so";
+```
+<img src="images/linux-picogk-config.png" alt="linux-picogk-config" style="zoom:100%;" />
 
 Now you are all set and can write your first PicoGK application. 
 
