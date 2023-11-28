@@ -2,6 +2,8 @@
 
 We compiled and tested PicoGKRuntime on Windows 64 bit and MacOS 14 Sonoma. Since Mac is our primary work environnment, we have tested it on Mac significantly more than on Windows. There is, however, nothing fundamentally platform-specific about PicoGK. The main platform dependencies are well-established libraries like OpenVDB. Our code is very straightforward and mostly header-only C++ code.
 
+For compiling on Linux, see the instructions [here](Compiling_PicoGKRuntime_Linux.md).
+
 ## What you need
 
 On Windows, you need **Visual Studio 2022 Community Edition** (or higher) with C++ support installed (bare bones C++ is enough).
