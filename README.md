@@ -2,9 +2,6 @@
 
 This is a **fork of the Leap71/PicoGK repo** which adds support for Linux developers.  The Leap71/PicoGKRuntime library is compiled for Linux and **included on the "linux" branch**.   The library can be used locally on Linux machines running Ubuntu 22.04+, or with the [Docker development environment](https://github.com/CorrieVS/PicoGK_Docker).  To install dependencies locally, you will need to clone [PicoGK_Runtime](https://github.com/CorrieVS/PicoGKRuntime) and run the linux install script.  Follow the linux installation instrcutions in the [documentation](https://github.com/CorrieVS/PicoGK/blob/linux/Documentation/installation.md).
 
-
-This is a **fork of the Leap71/PicoGK repo** which adds support for Linux developers.  The Leap71/PicoGKRuntime library is compiled for Linux and **included on the "linux" branch**.   The library can be used locally on Linux machines running Ubuntu 22.04+, or with the [Docker development environment](https://github.com/CorrieVS/PicoGK_Docker).  To install dependencies locally, you will need to clone [PicoGK_Runtime](https://github.com/CorrieVS/PicoGKRuntime) and run the linux install script.  Follow the linux installation instrcutions in the [documentation](https://github.com/CorrieVS/PicoGK/blob/linux/Documentation/installation.md).
-
 PicoGK ("peacock") is a compact, robust, and fast geometry kernel for Computational Engineering. 
 
 PicoGK was developed by [Lin Kayser](https://github.com/LinKayser), and is maintained by [LEAP 71](www.leap71.com). PicoGK is released under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
